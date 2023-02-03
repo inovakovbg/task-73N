@@ -1,19 +1,27 @@
 import "./App.css";
+import React, { useEffect, useState } from "react";
 
 function App() {
+  
+  const [counter, setCounter] = useState( 1 );
+
+  console.log({counter});
+  
+  let name= "Count ("+counter.toString()+")";
+  console.log(name)
+
+  useEffect( () => {document.title=name});
+
   return (
+
+   
+     
+
     <div className="App">
-      <section class="hero">
-        <div class="hero-body">
-          <p class="title">A React Task</p>
-          <p class="subtitle">by Boom.dev</p>
-        </div>
-      </section>
-      <div class="container is-fullhd">
-        <div class="notification">
-          Edit the <code>./src</code> folder to add components.
-        </div>
-      </div>
+      <h1>({name})</h1>
+      <button 
+      type="button"
+       onClick={() => setCounter (counter+1)} >Count ({counter})</button>
     </div>
   );
 }
